@@ -1,0 +1,19 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create New Page</h1>
+
+    <div class="{% if class %}alert{% else %}alert1{% endif %} alert-danger" role="alert">
+        <h3>There is already a webpage with this title!</h3>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form_to_create }}
+    </form>
+
+{% endblock %}

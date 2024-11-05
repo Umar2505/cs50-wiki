@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    {{text|safe}}
+    <h2>Change webpage</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{formChange}}
+    </form>
+    
+
+{% endblock %}
